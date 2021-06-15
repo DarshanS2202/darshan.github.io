@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <form name="mform" method="POST" action="javasc.html">
+        <input type="number" name="on">
+        <input type="button" value="+" onclick="add()">
+        <input type="button" value="-" onclick="sub()">
+        <input type="button" value="*" onclick="mul()">
+        <input type="button" value="/" onclick="div()">
+        <input type="button" value="%" onclick="rem()">
+        <input type="button" value="**" onclick="exp()">
+        <input type="number" name="tn">
+        <input type="button" value="=" onclick="cal()">
+        <p id="ans"></p>
+    </form>
+</body>
+<script>
+    var a=0
+    function add() {
+        a=1
+    }
+    function sub() {
+        a=2
+    }
+    function mul() {
+        a=3
+    }    
+    function div() {
+        a=4
+    }    
+    function rem() {
+        a=5
+    }    
+    function exp() {
+        a=6
+    }
+    function cal(){
+        var b=document.mform.on.value;
+        var c=document.mform.tn.value;
+        var d;
+        if (a==1){
+            d=Number(b)+Number(c)
+        }
+        if (a==2){
+            d=b-c
+        }
+        if (a==3){
+            d=b*c
+        }
+        if (a==4){
+            d=b/c
+        }
+        if (a==5){
+            d=b%c
+        }
+        if(a==6){
+            d=b**c
+        }
+        document.getElementById("ans").innerHTML=d
+    }
+</script>
+</html>
